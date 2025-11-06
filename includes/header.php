@@ -174,7 +174,7 @@ $nav = $navItems[$lang];
 <style>
 /* Header Styles */
 .header {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+    background: linear-gradient(135deg, var(--primary-blue, #1E5C99) 0%, var(--dark-blue, #0F3057) 100%);
     box-shadow: 0 2px 20px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     z-index: 1030;
@@ -191,7 +191,7 @@ $nav = $navItems[$lang];
 
 .header .navbar-brand {
     font-size: 1.5rem;
-    color: var(--gold) !important;
+    color: var(--gold, #FFB400) !important;
     transition: all 0.3s ease;
 }
 
@@ -208,18 +208,18 @@ $nav = $navItems[$lang];
     color: rgba(255,255,255,0.9) !important;
     font-weight: 500;
     padding: 0.5rem 1rem !important;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius, 8px);
     transition: all 0.3s ease;
     position: relative;
 }
 
 .header .nav-link:hover {
-    color: var(--gold) !important;
+    color: var(--gold, #FFB400) !important;
     background: rgba(255,255,255,0.1);
 }
 
 .header .nav-link.active {
-    color: var(--gold) !important;
+    color: var(--gold, #FFB400) !important;
 }
 
 .header .nav-link.active::after {
@@ -230,14 +230,14 @@ $nav = $navItems[$lang];
     transform: translateX(-50%);
     width: 30px;
     height: 2px;
-    background: var(--gold);
+    background: var(--gold, #FFB400);
 }
 
 .header .dropdown-menu {
     background: white;
     border: none;
-    box-shadow: var(--shadow-lg);
-    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg, 0 10px 40px rgba(0,0,0,0.15));
+    border-radius: var(--border-radius, 8px);
     margin-top: 0.5rem;
 }
 
@@ -247,13 +247,13 @@ $nav = $navItems[$lang];
 }
 
 .header .dropdown-item:hover {
-    background: var(--light-blue);
-    color: var(--primary-blue);
+    background: var(--primary-blue-lightest, #E8F2FA);
+    color: var(--primary-blue, #1E5C99);
     padding-left: 2rem;
 }
 
 .header .dropdown-item.active {
-    background: var(--primary-blue);
+    background: var(--primary-blue, #1E5C99);
     color: white;
 }
 
@@ -269,10 +269,10 @@ $nav = $navItems[$lang];
 /* Mobile Styles */
 @media (max-width: 991px) {
     .header .navbar-collapse {
-        background: var(--dark-blue);
+        background: var(--primary-blue-dark, #0F3057);
         padding: 1rem;
         margin-top: 1rem;
-        border-radius: var(--border-radius);
+        border-radius: var(--border-radius, 8px);
     }
     
     .header .nav-link {

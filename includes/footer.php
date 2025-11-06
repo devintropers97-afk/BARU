@@ -226,8 +226,8 @@ $t = $footerText[$lang];
 <style>
 /* Footer Styles */
 .footer {
-    background: var(--dark-blue);
-    color: var(--text-light);
+    background: var(--primary-blue-dark, #0F3057);
+    color: var(--text-light, rgba(255,255,255,0.9));
 }
 
 .footer-main {
@@ -251,7 +251,7 @@ $t = $footerText[$lang];
     left: 0;
     width: 50px;
     height: 3px;
-    background: var(--gold);
+    background: var(--gold, #FFB400);
 }
 
 .footer-links {
@@ -272,7 +272,7 @@ $t = $footerText[$lang];
 }
 
 .footer-links a:hover {
-    color: var(--gold);
+    color: var(--gold, #FFB400);
     padding-left: 0.5rem;
 }
 
@@ -283,18 +283,18 @@ $t = $footerText[$lang];
 }
 
 .footer-contact a:hover {
-    color: var(--gold);
+    color: var(--gold, #FFB400);
 }
 
 /* Newsletter Form */
 .newsletter-form .form-control {
     border: none;
-    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    border-radius: var(--border-radius, 8px) 0 0 var(--border-radius, 8px);
     padding: 0.75rem 1rem;
 }
 
 .newsletter-form .btn {
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    border-radius: 0 var(--border-radius, 8px) var(--border-radius, 8px) 0;
     padding: 0.75rem 1.5rem;
 }
 
@@ -319,8 +319,8 @@ $t = $footerText[$lang];
 }
 
 .social-link:hover {
-    background: var(--gold);
-    color: var(--dark-blue);
+    background: var(--gold, #FFB400);
+    color: var(--primary-blue-dark, #0F3057);
     transform: translateY(-3px);
 }
 
@@ -370,7 +370,7 @@ $t = $footerText[$lang];
 }
 
 .footer-legal a:hover {
-    color: var(--gold);
+    color: var(--gold, #FFB400);
 }
 
 /* Back to Top Button */
@@ -380,8 +380,8 @@ $t = $footerText[$lang];
     right: 2rem;
     width: 50px;
     height: 50px;
-    background: var(--gold);
-    color: var(--dark-blue);
+    background: var(--gold, #FFB400);
+    color: var(--primary-blue-dark, #0F3057);
     border: none;
     border-radius: 50%;
     font-size: 1.5rem;
@@ -389,7 +389,7 @@ $t = $footerText[$lang];
     display: none;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-lg, 0 10px 40px rgba(0,0,0,0.15));
     transition: all 0.3s ease;
     z-index: 1000;
 }
