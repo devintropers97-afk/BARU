@@ -4,6 +4,9 @@
  * Main landing page with all sections
  */
 
+// Define initialization constant (required by config files)
+define('SITUNEO_INIT', true);
+
 // Define root path (go up 2 levels from /pages/public/)
 define('ROOT_PATH', dirname(dirname(__DIR__)));
 
