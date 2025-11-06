@@ -356,20 +356,28 @@ class Installer {
             ROOT_DIR . '/logs' => 0755,
             CONFIG_DIR => 0755
         ];
-        
+
         foreach ($directories as $dir => $permission) {
-            if (is_dir($dir)) {
-                if (@chmod($dir, $permission)) {
-                    echo "<p class='success'>✓ Set permission $permission for $dir</p>";
+            // Create directory if it doesn't exist
+            if (!is_dir($dir)) {
+                if (@mkdir($dir, $permission, true)) {
+                    echo "<p class='success'>✓ Created directory: $dir</p>";
                 } else {
-                    echo "<p class='warning'>⚠ Could not set permission for $dir (may need manual setup)</p>";
-                    $this->warnings[] = "Could not set permission for $dir";
+                    echo "<p class='error'>✗ Failed to create directory: $dir</p>";
+                    $this->errors[] = "Failed to create directory: $dir";
+                    continue;
                 }
+            }
+
+            // Set permissions
+            if (@chmod($dir, $permission)) {
+                echo "<p class='success'>✓ Set permission $permission for $dir</p>";
             } else {
-                echo "<p class='warning'>⚠ Directory not found: $dir</p>";
+                echo "<p class='warning'>⚠ Could not set permission for $dir (may need manual setup)</p>";
+                $this->warnings[] = "Could not set permission for $dir";
             }
         }
-        
+
         $this->success[] = "File permissions set";
     }
     
