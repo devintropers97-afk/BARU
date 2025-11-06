@@ -1,0 +1,5 @@
+# Protect database schema
+<Files "*">
+    Order Allow,Deny
+    Deny from all
+</Files>

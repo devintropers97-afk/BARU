@@ -1,0 +1,6 @@
+# Block access to installer after installation
+Order Deny,Allow
+Deny from all
+
+# Allow only from specific IP (replace with your IP for maintenance)
+# Allow from 123.456.789.0
